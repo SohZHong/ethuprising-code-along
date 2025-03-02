@@ -1,0 +1,91 @@
+[
+  {
+    "name": "CollectionCreated",
+    "type": "event",
+    "inputs": [
+      {
+        "name": "collectionAddress",
+        "type": "address",
+        "indexed": true,
+        "internalType": "address"
+      },
+      {
+        "name": "creator",
+        "type": "address",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
+        "name": "name",
+        "type": "string",
+        "indexed": false,
+        "internalType": "string"
+      },
+      {
+        "name": "symbol",
+        "type": "string",
+        "indexed": false,
+        "internalType": "string"
+      },
+      {
+        "name": "baseURI",
+        "type": "string",
+        "indexed": false,
+        "internalType": "string"
+      }
+    ],
+    "anonymous": false
+  },
+  {
+    "name": "collections",
+    "type": "function",
+    "inputs": [{ "name": "", "type": "uint256", "internalType": "uint256" }],
+    "outputs": [
+      {
+        "name": "collectionAddress",
+        "type": "address",
+        "internalType": "address"
+      },
+      { "name": "creator", "type": "address", "internalType": "address" },
+      { "name": "name", "type": "string", "internalType": "string" },
+      { "name": "symbol", "type": "string", "internalType": "string" },
+      { "name": "baseURI", "type": "string", "internalType": "string" }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "name": "createNFTCollection",
+    "type": "function",
+    "inputs": [
+      { "name": "_name", "type": "string", "internalType": "string" },
+      { "name": "_symbol", "type": "string", "internalType": "string" },
+      { "name": "_baseURI", "type": "string", "internalType": "string" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "name": "getAllCollections",
+    "type": "function",
+    "inputs": [],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple[]",
+        "components": [
+          {
+            "name": "collectionAddress",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "creator", "type": "address", "internalType": "address" },
+          { "name": "name", "type": "string", "internalType": "string" },
+          { "name": "symbol", "type": "string", "internalType": "string" },
+          { "name": "baseURI", "type": "string", "internalType": "string" }
+        ],
+        "internalType": "struct NFTFactory.CollectionInfo[]"
+      }
+    ],
+    "stateMutability": "view"
+  }
+]

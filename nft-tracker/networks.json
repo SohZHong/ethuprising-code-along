@@ -1,0 +1,8 @@
+{
+  "scroll-sepolia": {
+    "NFTFactory": {
+      "address": "0x65F5D6d678dE105e2AB1F28F4433766d757E5573",
+      "startBlock": 8369141
+    }
+  }
+}

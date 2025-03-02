@@ -1,3 +1,4 @@
+# NFTFactory Event
 type CollectionCreated @entity(immutable: true) {
   id: Bytes!
   collectionAddress: Bytes! # address
@@ -5,6 +6,17 @@ type CollectionCreated @entity(immutable: true) {
   name: String! # string
   symbol: String! # string
   baseURI: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+# NFTCollection Event
+type NFTMinted @entity(immutable: true) {
+  id: Bytes!
+  recipient: Bytes! # address
+  tokenId: BigInt! # uint256
+  metadataCID: String! # string
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!

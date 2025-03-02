@@ -1,0 +1,26 @@
+specVersion: 1.2.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: NFTFactory
+    network: scroll-sepolia
+    source:
+      address: "0x4e3F7Ace4d233c05B9ed867893910B2B773775bE"
+      abi: NFTFactory
+      startBlock: 8344766
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.9
+      language: wasm/assemblyscript
+      entities:
+        - CollectionCreated
+      abis:
+        - name: NFTFactory
+          file: ./abis/NFTFactory.json
+      eventHandlers:
+        - event: CollectionCreated(indexed address,address,string,string,string)
+          handler: handleCollectionCreated
+      file: ./src/nft-factory.ts

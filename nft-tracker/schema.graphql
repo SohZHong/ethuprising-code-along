@@ -1,5 +1,6 @@
 type CollectionCreated @entity(immutable: true) {
   id: Bytes!
+  relation: DataRelation!
   collectionAddress: Bytes! # address
   creator: Bytes! # address
   name: String! # string
@@ -8,4 +9,22 @@ type CollectionCreated @entity(immutable: true) {
   blockNumber: BigInt!
   blockTimestamp: BigInt!
   transactionHash: Bytes!
+}
+
+type NFTMinted @entity(immutable: true) {
+  id: Bytes!
+  relation: DataRelation!
+  recipient: Bytes! # address
+  tokenId: BigInt! # uint256
+  metadataCID: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type DataRelation @entity {
+  id: Bytes!
+  user: Bytes!
+  collectionCreated: [CollectionCreated!]! @derivedFrom(field: "relation")
+  nftMinted: [NFTMinted!]! @derivedFrom(field: "relation")
 }

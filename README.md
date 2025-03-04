@@ -105,7 +105,7 @@ Follow these steps to prepare your metadata:
 ```vbnet
 Name: "Cool Avatars"
 Symbol: "CAV"
-BaseURI: "<YOUR_METADATA_FOLDER_CID>"
+BaseURI: "ipfs://<YOUR_METADATA_FOLDER_CID>/"
 ```
 - Click "Write" to execute the transaction.
 
